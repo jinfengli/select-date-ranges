@@ -4,5 +4,5 @@
     <string name="please_select_same_period">请选择同期时间</string>
     <string name="select_this_period">选择本期时间</string>
     <string name="select_same_period">选择同期时间</string>
-    <string name="select_no_more_5_days">选择不得超过5天</string>
+    <string name="select_no_more_10_days">选择不得超过10天</string>
 </resources>

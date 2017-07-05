@@ -75,8 +75,8 @@ public class DateRangeDialog extends Dialog implements View.OnClickListener, Cal
     @Override
     public void onDateSelected(Date date) {
         long start = calendarPickerView.getSelectedDates().get(0).getTime();
-        if (date.getTime() - start > 4 * TimeUtil.dayMills) {
-            ToastUtil.toastL(context, context.getString(R.string.select_no_more_5_days));
+        if (date.getTime() - start > 9 * TimeUtil.dayMills) {
+            ToastUtil.toastL(context, context.getString(R.string.select_no_more_10_days));
             // 把选中的日期范围给清掉
             calendarPickerView.clearSelectedRangeDates();
         }
@@ -189,13 +189,13 @@ public class DateRangeDialog extends Dialog implements View.OnClickListener, Cal
                 List<Date> mSelectDate = calendarPickerView.getSelectedDates();
                 if (mSelectDate.size() <= 1) {
                     ToastUtil.toastL(context, context.getString(R.string.please_select_same_period));
-                } else if (mSelectDate.size() > 1 && mSelectDate.size() <= 5) {
+                } else if (mSelectDate.size() > 1 && mSelectDate.size() <= 10) {
                     long start = mSelectDate.get(0).getTime();
                     long end = mSelectDate.get(mSelectDate.size() - 1).getTime() + TimeUtil.dayMills - 1;
                     mDateRangeSelectedListener.onDateSelect(start, end);
                     dismiss();
                 } else {
-                    ToastUtil.toastL(context, context.getString(R.string.select_no_more_5_days));
+                    ToastUtil.toastL(context, context.getString(R.string.select_no_more_10_days));
                 }
 
                 break;
@@ -217,10 +217,12 @@ public class DateRangeDialog extends Dialog implements View.OnClickListener, Cal
         calendarPickerView.setDecorators(Collections.<CalendarCellDecorator>emptyList());
 
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.YEAR, -1);
-        calendar.add(Calendar.MONTH, -calendar.get(Calendar.MONTH)); // 上一年的第一个月份开始
+//        calendar.add(Calendar.YEAR, -1);
+        calendar.set(Calendar.MONTH, 5);
+//        calendar.add(Calendar.MONTH, -calendar.get(Calendar.MONTH)); // 上一年的第一个月份开始
         // 上一年的第一个月的第一天， 日起选择器的第一天， 处于active状态。
-        calendar.add(Calendar.DAY_OF_MONTH, -calendar.get(Calendar.DAY_OF_MONTH) + 1);
+//        calendar.add(Calendar.DAY_OF_MONTH, -calendar.get(Calendar.DAY_OF_MONTH) + 1);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
         Date startDate = calendar.getTime();
 
         if (!isEndDateTag()) {

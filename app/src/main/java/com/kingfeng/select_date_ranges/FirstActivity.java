@@ -24,8 +24,6 @@ public class FirstActivity extends AppCompatActivity {
 
         String yesterdayDate = TimeUtil.getDateString(new Date().getTime() - TimeUtil.dayMills, "yyyy.MM.dd");
         thisPeriodStart = thisPeriodEnd = yesterdayDate;
-//        thisPeriodStart = PreferenceUtils.getPrefString(this, account + "_" + Constants.THIS_START_DATE_KEY, yesterdayDate);
-//        thisPeriodEnd = PreferenceUtils.getPrefString(this, account + "_" + Constants.THIS_END_DATE_KEY, yesterdayDate);
 
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.YEAR, -1);

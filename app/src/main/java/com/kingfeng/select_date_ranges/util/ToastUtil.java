@@ -21,26 +21,10 @@ public class ToastUtil {
 
 	}
 
-	/**
-	 * 显示吐司信息（较长时间）
-	 * 
-	 * @param context
-	 * @param message
-	 */
 	public static void toastL(Context context, String message) {
-		//        Toast.makeText(context, text, Toast.LENGTH_LONG).show();        
-		//        Toast toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
-		//		toast.setGravity(Gravity.TOP, 0, 50);
-		//		toast.show();
 		toast(context, message, Toast.LENGTH_LONG);
 	}
 
-	/**
-	 * 显示吐司信息（较短时间）
-	 * 
-	 * @param context
-	 * @param message
-	 */
 	public static void toasts(Context context, String message) {
 		//        Toast.makeText(context, text, Toast.LENGTH_SHORT).show();        
 		//        Toast toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
@@ -49,15 +33,6 @@ public class ToastUtil {
 		toast(context, message, Toast.LENGTH_SHORT);
 	}
 
-	/**
-	 * @方法名: toasts
-	 * @描述: TODO(短时间吐司)
-	 * @设定: @param context
-	 * @设定: @param message 吐司内容，为string里面的内容id
-	 * @返回: void 返回类型
-	 * @日期: 2014-5-26 上午9:55:09
-	 * @throws
-	 */
 	public static void toasts(Context context, int resId) {
 		//      Toast.makeText(context, message, Toast.LENGTH_SHORT).show();        
 		//      Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
@@ -66,31 +41,17 @@ public class ToastUtil {
 		toast(context, resId, Toast.LENGTH_SHORT);
 	}
 
-	/**
-	 * 显示吐司信息交给handler处理（较长时间）
-	 * 
-	 * @param context
-	 * @param message
-	 * @param handler
-	 */
+
 	public static void toastLInThread(final Context context, final String message, Handler handler) {
 
 		handler.post(new Runnable() {
 			@Override
 			public void run() {
-				//                ToastUtil.toastL(context, message);
 				ToastUtil.toast(context, message, Toast.LENGTH_LONG);
 			}
 		});
 	}
 
-	/**
-	 * 显示吐司信息交给handler处理（较短时间）
-	 * 
-	 * @param context
-	 * @param message
-	 * @param handler
-	 */
 	public static void toastsInThread(final Context context, final String message, Handler handler) {
 
 		handler.post(new Runnable() {
@@ -150,9 +111,4 @@ public class ToastUtil {
 			mToast.cancel();			
 		}
 	}
-	
-
-	
-	
-
 }

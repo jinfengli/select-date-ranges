@@ -162,9 +162,7 @@ public class CalendarPickerView extends ListView {
         if (isInEditMode()) {
             Calendar nextYear = Calendar.getInstance(timeZone, locale);
             nextYear.add(Calendar.YEAR, 1);
-
-            init(new Date(), nextYear.getTime()) //
-                    .withSelectedDate(new Date());
+            init(new Date(), nextYear.getTime()).withSelectedDate(new Date());
         }
     }
 
@@ -208,8 +206,7 @@ public class CalendarPickerView extends ListView {
         minCal = Calendar.getInstance(timeZone, locale);
         maxCal = Calendar.getInstance(timeZone, locale);
         monthCounter = Calendar.getInstance(timeZone, locale);
-        monthNameFormat =
-                new SimpleDateFormat(getContext().getString(R.string.month_name_format), locale);
+        monthNameFormat = new SimpleDateFormat(getContext().getString(R.string.month_name_format), locale);
         monthNameFormat.setTimeZone(timeZone);
         for (MonthDescriptor month : months) {
             month.setLabel(monthNameFormat.format(month.getDate()));
@@ -750,23 +747,6 @@ public class CalendarPickerView extends ListView {
                 lastDescriptor.setRangeState(RangeState.LAST);
                 lastDescriptor.setDataStr(lastDescriptor.getValue() + "\n结束");
 
-//          for (List<List<MonthCellDescriptor>> month : cells) {
-//              for (List<MonthCellDescriptor> week : month) {
-//                  for (MonthCellDescriptor singleCell : week) {
-//                      if (singleCell.getDate().after(start)
-//                              && singleCell.getDate().before(end)
-//                              && singleCell.isSelectable()) {
-//                          singleCell.setSelected(true);
-//                          singleCell.setRangeState(RangeState.MIDDLE);
-//                          selectedCells.add(singleCell);
-//                      }
-//                  }
-//              }
-//          }
-
-//        selectedCells.get(0).setRangeState(RangeState.FIRST);
-//        selectedCells.get(1).setRangeState(RangeState.LAST);
-
                 int startMonthIndex = cells.getIndexOfKey(monthKey(selectedCals.get(0)));
                 int endMonthIndex = cells.getIndexOfKey(monthKey(selectedCals.get(1)));
                 for (int monthIndex = startMonthIndex; monthIndex <= endMonthIndex; monthIndex++) {
@@ -1186,7 +1166,7 @@ public class CalendarPickerView extends ListView {
             String errMessage =
                     getResources().getString(R.string.invalid_date, fullDateFormat.format(minCal.getTime()),
                             fullDateFormat.format(maxCal.getTime()));
-            Toast.makeText(getContext(), errMessage, Toast.LENGTH_SHORT).show();
+            Logr.d(errMessage);
         }
     }
 }
