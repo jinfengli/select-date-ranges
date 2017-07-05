@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 覆盖层主题去掉activity切换的动画效果  -->
+    <!-- <style name="myTheme" parent="transparent_theme"/>-->
+    <style name="MaskTipTheme" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <!-- <item name="android:windowAnimationStyle">@style/Animation</item>-->
+    </style>
+
+    <style name="Transparent" parent="@android:style/Theme.Translucent.NoTitleBar"/>
+
+    <!-- <style name="Animation">
+         <item name="android:activityOpenEnterAnimation">@null</item>
+         <item name="android:activityOpenExitAnimation">@null</item>
+         <item name="android:activityCloseEnterAnimation">@null</item>
+         <item name="android:activityCloseExitAnimation">@null</item>
+         <item name="android:taskOpenEnterAnimation">@null</item>
+         <item name="android:taskOpenExitAnimation">@null</item>
+         <item name="android:taskCloseEnterAnimation">@null</item>
+         <item name="android:taskCloseExitAnimation">@null</item>
+         <item name="android:taskToFrontEnterAnimation">@null</item>
+         <item name="android:taskToFrontExitAnimation">@null</item>
+         <item name="android:taskToBackEnterAnimation">@null</item>
+         <item name="android:taskToBackExitAnimation">@null</item>
+     </style>-->
+
+    <style name="MaskTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--  <item name="android:windowFrame">@null</item>
+          <item name="android:windowNoTitle">true</item>
+          <item name="android:windowIsFloating">true</item>
+          <item name="android:windowIsTranslucent">true</item>
+          <item name="android:windowContentOverlay">@null</item>
+          <item name="android:backgroundDimEnabled">false</item>
+          <item name="android:windowAnimationStyle">@null</item>
+          <item name="android:windowDisablePreview">false</item>
+          <item name="android:windowNoDisplay">false</item>-->
+    </style>
+
+    <style name="mystyle" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="@android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+
+    <style name="BottomDialog" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="BottomDialog.Animation" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+
+
+
+    <style name="setting_item_middle_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.2dp</item>
+        <item name="android:background">@color/setting_item_middle_line</item>
+    </style>
+
+
+
+</resources>

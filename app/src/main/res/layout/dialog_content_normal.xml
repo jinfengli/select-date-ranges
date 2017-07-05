@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/calendar_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#fefefe"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:src="@drawable/icon_quit" />
+
+            <TextView
+                android:id="@+id/tv_calendar_dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:text="选择日期" />
+
+        </RelativeLayout>
+
+        <com.kingfeng.select_date_ranges.timessquare.CalendarRowView
+            android:id="@+id/calendar_head_row_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fefefe"
+            android:paddingBottom="@dimen/calendar_day_headers_paddingbottom">
+
+            <TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日"
+                android:textColor="@color/calendar_header_weekend_text" />
+
+            <TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="一" />
+
+            <TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="二" />
+
+            <TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="三" />
+
+            <TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="四" />
+
+            <TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="五" />
+
+            <TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="六"
+                android:textColor="@color/calendar_header_weekend_text" />
+        </com.kingfeng.select_date_ranges.timessquare.CalendarRowView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#aaaaaa"/>
+
+        <com.kingfeng.select_date_ranges.timessquare.CalendarPickerView
+            android:id="@+id/calendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_select_period_sure"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="20dp"
+        android:background="#f5950d"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
+</FrameLayout>

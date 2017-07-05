@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="day_name_format">E</string>
+    <string name="invalid_date">Date must be between %1$s and %2$s.</string>
+    <string name="month_name_format">yyyy年MM月</string> <!-- 展示中文  yyyy-MMMM    yyyy-MM  2017-07-->
+    <string name="selected_times">%1$s - %2$s</string>
+
+
+</resources>

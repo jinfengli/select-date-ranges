@@ -1,0 +1,7 @@
+package com.kingfeng.select_date_ranges.timessquare;
+
+
+/** The range state of a cell for {@link MonthCellDescriptor} and {@link CalendarCellView}*/
+public enum RangeState {
+    NONE, FIRST, MIDDLE, LAST
+}

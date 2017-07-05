@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 可点击的月份的背景色 -->
+    <!--  <color name="calendar_active_month_bg">#fff5f7f9</color>-->
+    <color name="calendar_active_month_bg">#ffffffff</color>
+    <color name="calendar_bg">#ffffffff</color>
+    <color name="calendar_divider">#ffbababa</color>
+    <color name="calendar_inactive_month_bg">#ffffff</color>
+   <!-- <color name="calendar_inactive_month_bg">#ffd7d9db</color>-->
+
+    <color name="calendar_selected_day_bg">#fff5950d</color>
+  <!--  <color name="calendar_selected_day_bg">#ffffff</color>-->
+    <!-- #F6960E-->
+    <color name="calendar_highlighted_day_bg">#ccffcc</color>
+    <!--<color name="calendar_selected_range_bg">#fff5950d</color>-->
+    <color name="calendar_selected_range_bg">#ffCCB596</color>
+    <color name="calendar_text_inactive">#ffffff</color>
+    <!--<color name="calendar_text_inactive">#ffffff</color>-->
+    <color name="calendar_text_active">#000000</color>
+    <color name="calendar_text_selected">#ffffff</color>
+    <color name="calendar_text_unselectable">#cccccc</color>
+
+    <!-- <color name="calendar_text_highlighted">#ffff0000</color>-->
+    <color name="calendar_text_highlighted">#ff778088</color>
+
+    <color name="calendar_header_weekend_text">#fff5950d</color>
+
+    <color name="hint_view_text">#867ae4</color>
+    <color name="setting_item_middle_line">#ecebeb</color>
+</resources>

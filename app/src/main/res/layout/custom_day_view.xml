@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/day_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        style="@style/CalendarCell.CalendarDate" />
+
+<!--    android:background="@drawable/calendar_bg_selector"-->
+
+    <TextView
+        android:id="@+id/tv_calendar_cell_view_comment"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textSize="8sp" />
+    <!--android:scaleType="centerInside"-->
+</LinearLayout>
