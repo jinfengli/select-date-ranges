@@ -127,8 +127,9 @@ public class MonthView extends LinearLayout {
                     CalendarCellView cellView = (CalendarCellView) weekRow.getChildAt(c);
 
                     String cellDate = cell.getDataStr();
+//                    String cellDate = numberFormatter.format(cell.getValue());
                     if (!cellView.getDayOfMonthTextView().equals(cellDate)) {
-                        //设置文字
+                        // 设置文字
                         if (cell.getRangeState() == RangeState.FIRST) {
                             SpannableString spannableString = new SpannableString(cellDate);
                             AbsoluteSizeSpan span2 = new AbsoluteSizeSpan(20);
@@ -137,20 +138,34 @@ public class MonthView extends LinearLayout {
                                 spannableString.setSpan(span2, cellDate.length() - 5, cellDate.length(),
                                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                                 cellView.getDayOfMonthTextView().setText(spannableString);
+                                cellView.getDayOfMonthTextView().setText(cellDate.subSequence(0, cellDate.length() - 5));
+                                cellView.getDayOfMonthCommentView().setText("开始" + "\n" + "结束");
+                                cellView.getDayOfMonthTextView().setBackground(getResources().getDrawable(R.drawable.text_select_shape));
+                                cellView.getLinearLayoutBg().setBackground(getResources().getDrawable(R.drawable.text_select_shape));
 
                             } else {
                                 spannableString.setSpan(span2, cellDate.length() - 2, cellDate.length(),
                                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                                cellView.getDayOfMonthTextView().setText(spannableString);
+                                cellView.getDayOfMonthTextView().setText(cellDate.subSequence(0, cellDate.length() - 2));
+                                cellView.getDayOfMonthCommentView().setText("开始");
+                                cellView.getDayOfMonthTextView().setBackground(getResources().getDrawable(R.drawable.text_select_shape));
+                                cellView.getLinearLayoutBg().setBackground(getResources().getDrawable(R.drawable.text_select_left_shape));
                             }
                         } else if (cell.getRangeState() == RangeState.LAST) {
                             SpannableString spannableString = new SpannableString(cellDate);
                             AbsoluteSizeSpan span2 = new AbsoluteSizeSpan(20);
-                            spannableString.setSpan(span2, cellDate.length() - 2, cellDate.length(),
-                                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                            cellView.getDayOfMonthTextView().setText(spannableString);
+                            spannableString.setSpan(span2, cellDate.length() - 2, cellDate.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            cellView.getDayOfMonthTextView().setText(cellDate.subSequence(0, cellDate.length() - 2));
+                            cellView.getDayOfMonthTextView().setBackground(getResources().getDrawable(R.drawable.text_select_shape));
+                            cellView.getDayOfMonthCommentView().setText("结束");
+                            cellView.getLinearLayoutBg().setBackground(getResources().getDrawable(R.drawable.text_select_right_shape));
+
+                        } else if(cell.getRangeState() == RangeState.MIDDLE) {
+                            cellView.getDayOfMonthTextView().setText(cellDate);
+                            cellView.getLinearLayoutBg().setBackgroundColor(getResources().getColor(R.color.calendar_selected_radius_bg));
                         } else {
                             cellView.getDayOfMonthTextView().setText(cellDate);
+//                            cellView.getLinearLayoutBg().setBackgroundColor(getResources().getColor(R.color.calendar_selected_radius_bg));
                         }
                     }
 

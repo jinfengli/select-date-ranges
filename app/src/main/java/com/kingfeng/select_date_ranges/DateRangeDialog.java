@@ -15,12 +15,15 @@ import android.widget.TextView;
 import com.kingfeng.select_date_ranges.timessquare.CalendarCellDecorator;
 import com.kingfeng.select_date_ranges.timessquare.CalendarPickerView;
 import com.kingfeng.select_date_ranges.timessquare.CalendarRowView;
+import com.kingfeng.select_date_ranges.timessquare.DefaultDayViewAdapter;
+import com.kingfeng.select_date_ranges.timessquare.HBAppCalendarCellDecorator;
 import com.kingfeng.select_date_ranges.util.TimeUtil;
 import com.kingfeng.select_date_ranges.util.ToastUtil;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
@@ -74,12 +77,16 @@ public class DateRangeDialog extends Dialog implements View.OnClickListener, Cal
 
     @Override
     public void onDateSelected(Date date) {
+//        calendarPickerView.setCustomDayView(new DefaultDayViewAdapter());
+
         long start = calendarPickerView.getSelectedDates().get(0).getTime();
         if (date.getTime() - start > 4 * TimeUtil.dayMills) {
             ToastUtil.toastL(context, context.getString(R.string.select_no_more_5_days));
             // 把选中的日期范围给清掉
             calendarPickerView.clearSelectedRangeDates();
-        }
+        } /*else {
+            calendarPickerView.setCustomDayView(new DefaultDayViewAdapter());
+        }*/
     }
 
     @Override
@@ -224,8 +231,10 @@ public class DateRangeDialog extends Dialog implements View.OnClickListener, Cal
         Date startDate = calendar.getTime();
 
         if (!isEndDateTag()) {
-//            calendarPickerView.setDecorators(Arrays.<CalendarCellDecorator>asList(new HBAppCalendarCellDecorator()));
+//            calendarPickerView.setDecorators(Arrays.<CalendarCellDecorator>asList(new HBAppCalendarCellDecorator(context)));
 //            calendarPickerView.setCustomDayView(new CalendarCellDayViewAdapter());
+//            calendarPickerView.setDecorators(Collections.<CalendarCellDecorator>emptyList());
+            calendarPickerView.setCustomDayView(new DefaultDayViewAdapter());
             fluentInitializer = calendarPickerView.init(startDate, new Date());
             fluentInitializer.inMode(CalendarPickerView.SelectionMode.RANGE)
                     .withSelectedDates(mDates);

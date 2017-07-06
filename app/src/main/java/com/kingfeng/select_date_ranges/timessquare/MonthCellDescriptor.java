@@ -30,10 +30,13 @@ class MonthCellDescriptor {
         this.rangeState = rangeState;
 
         if (RangeState.FIRST == rangeState) {
+//            setDataStr(value + "");
             setDataStr(value + "n开始");
 //            setDataStr("开始");
         } else if (RangeState.LAST == rangeState) {
+//            setDataStr(value + "");
             setDataStr(value + "/n结束");
+
 //            setDataStr("结束");
         } else {
             setDataStr(value + "");
