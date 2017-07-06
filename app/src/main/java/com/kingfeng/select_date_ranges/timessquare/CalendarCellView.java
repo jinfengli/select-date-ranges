@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import com.kingfeng.select_date_ranges.R;
 
-
+/**
+ * CalendarCellView
+ */
 public class CalendarCellView extends FrameLayout {
     private static final int[] STATE_SELECTABLE = {
             R.attr.tsquare_state_selectable
@@ -149,7 +151,7 @@ public class CalendarCellView extends FrameLayout {
     }
 
     public TextView getDayOfMonthCommentView() {
-        if(dayOfMonthCommentView == null) {
+        if (dayOfMonthCommentView == null) {
             throw new IllegalStateException("You have to setDayOfMonthCommentView in your custom DayViewAdapter.");
         }
         return dayOfMonthCommentView;
@@ -160,7 +162,7 @@ public class CalendarCellView extends FrameLayout {
     }
 
     public LinearLayout getLinearLayoutBg() {
-        if(linearLayoutBg == null) {
+        if (linearLayoutBg == null) {
             throw new IllegalStateException("You have to setLinearLayoutBg in your custom DayViewAdapter.");
         }
         return linearLayoutBg;

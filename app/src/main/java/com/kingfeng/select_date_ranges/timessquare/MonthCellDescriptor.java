@@ -1,5 +1,3 @@
-// Copyright 2012 Square, Inc.
-
 package com.kingfeng.select_date_ranges.timessquare;
 
 import java.util.Date;
@@ -31,12 +29,11 @@ class MonthCellDescriptor {
 
         if (RangeState.FIRST == rangeState) {
 //            setDataStr(value + "");
-            setDataStr(value + "n开始");
+            setDataStr(value + "开始");
 //            setDataStr("开始");
         } else if (RangeState.LAST == rangeState) {
 //            setDataStr(value + "");
-            setDataStr(value + "/n结束");
-
+            setDataStr(value + "结束");
 //            setDataStr("结束");
         } else {
             setDataStr(value + "");

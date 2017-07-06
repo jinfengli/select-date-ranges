@@ -3,9 +3,6 @@ package com.kingfeng.select_date_ranges.timessquare;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.AbsoluteSizeSpan;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -73,7 +70,7 @@ public class MonthView extends LinearLayout {
     }
 
     private static int getDayOfWeek(int firstDayOfWeek, int offset, boolean isRtl) {
-        int dayOfWeek = firstDayOfWeek + offset;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  int dayOfWeek = firstDayOfWeek + offset;
         if (isRtl) {
             return 8 - dayOfWeek;
         }
@@ -128,33 +125,21 @@ public class MonthView extends LinearLayout {
 
                     String cellDate = cell.getDataStr();
 //                    String cellDate = numberFormatter.format(cell.getValue());
-                    if (!cellView.getDayOfMonthTextView().equals(cellDate)) {
+                    if (!cellView.getDayOfMonthTextView()/*.getText()*/.equals(cellDate)) {
                         // 设置文字
                         if (cell.getRangeState() == RangeState.FIRST) {
-                            SpannableString spannableString = new SpannableString(cellDate);
-                            AbsoluteSizeSpan span2 = new AbsoluteSizeSpan(20);
-                            if (spannableString.toString().contains("开始") && spannableString.toString().contains("结束")) {
+                            if (cellDate.contains("开始") && cellDate.contains("结束")) {
                                 // 开始，结束 ，另外还包含一个换行  共5个字符。
-                                spannableString.setSpan(span2, cellDate.length() - 5, cellDate.length(),
-                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                                cellView.getDayOfMonthTextView().setText(spannableString);
                                 cellView.getDayOfMonthTextView().setText(cellDate.subSequence(0, cellDate.length() - 5));
                                 cellView.getDayOfMonthCommentView().setText("开始" + "\n" + "结束");
                                 cellView.getDayOfMonthTextView().setBackground(getResources().getDrawable(R.drawable.text_select_shape));
                                 cellView.getLinearLayoutBg().setBackground(getResources().getDrawable(R.drawable.text_select_shape));
-
                             } else {
-                                spannableString.setSpan(span2, cellDate.length() - 2, cellDate.length(),
-                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                                cellView.getDayOfMonthTextView().setText(cellDate.subSequence(0, cellDate.length() - 2));
                                 cellView.getDayOfMonthCommentView().setText("开始");
                                 cellView.getDayOfMonthTextView().setBackground(getResources().getDrawable(R.drawable.text_select_shape));
                                 cellView.getLinearLayoutBg().setBackground(getResources().getDrawable(R.drawable.text_select_left_shape));
                             }
                         } else if (cell.getRangeState() == RangeState.LAST) {
-                            SpannableString spannableString = new SpannableString(cellDate);
-                            AbsoluteSizeSpan span2 = new AbsoluteSizeSpan(20);
-                            spannableString.setSpan(span2, cellDate.length() - 2, cellDate.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                             cellView.getDayOfMonthTextView().setText(cellDate.subSequence(0, cellDate.length() - 2));
                             cellView.getDayOfMonthTextView().setBackground(getResources().getDrawable(R.drawable.text_select_shape));
                             cellView.getDayOfMonthCommentView().setText("结束");

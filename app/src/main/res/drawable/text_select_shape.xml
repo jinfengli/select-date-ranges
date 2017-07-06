@@ -13,6 +13,6 @@
         android:width="1dp"
         android:color="@color/calendar_selected_radius_bg" />
     <size
-        android:width="36dp"
-        android:height="36dp" />
+        android:width="30dp"
+        android:height="30dp" />
 </shape>

@@ -554,6 +554,7 @@ public class CalendarPickerView extends ListView {
 //    }
 //    Collections.sort(selectedDates);
 //    return selectedDates;
+
         List<Date> selectedDates = new ArrayList<Date>();
         if (selectedCells.size() == 1) {
             if (isdouble) {
@@ -718,7 +719,7 @@ public class CalendarPickerView extends ListView {
 //            isdouble = true;
                 MonthCellDescriptor fistDescriptor = selectedCells.get(0);
                 fistDescriptor.setRangeState(RangeState.FIRST);
-                fistDescriptor.setDataStr(fistDescriptor.getValue() + "\n开始" + "\n" + "结束");
+                fistDescriptor.setDataStr(fistDescriptor.getValue() + "\n开始"  + "结束");
                 isdouble = true;
                 cell.setSelected(true);
                 validateAndUpdate();
@@ -745,7 +746,7 @@ public class CalendarPickerView extends ListView {
 
                 validateAndUpdate();
                 lastDescriptor.setRangeState(RangeState.LAST);
-                lastDescriptor.setDataStr(lastDescriptor.getValue() + "\n结束");
+                lastDescriptor.setDataStr(lastDescriptor.getValue() + "结束");
 
                 int startMonthIndex = cells.getIndexOfKey(monthKey(selectedCals.get(0)));
                 int endMonthIndex = cells.getIndexOfKey(monthKey(selectedCals.get(1)));

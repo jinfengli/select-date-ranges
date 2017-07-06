@@ -15,6 +15,7 @@
     <!--<color name="calendar_selected_range_bg">#fff5950d</color>-->
     <color name="calendar_selected_range_bg">#ffCCB596</color>
     <color name="calendar_text_inactive">#cccccc</color>
+   <!-- <color name="calendar_text_inactive">#ff0000</color>-->
     <!--<color name="calendar_text_inactive">#ffffff</color>-->
     <color name="calendar_text_active">#000000</color>
     <color name="calendar_text_selected">#ffffff</color>
