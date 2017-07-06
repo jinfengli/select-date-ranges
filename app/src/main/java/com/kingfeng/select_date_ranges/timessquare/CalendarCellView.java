@@ -5,6 +5,7 @@ package com.kingfeng.select_date_ranges.timessquare;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kingfeng.select_date_ranges.R;
@@ -40,6 +41,8 @@ public class CalendarCellView extends FrameLayout {
     private RangeState rangeState = RangeState.NONE;
     private TextView dayOfMonthTextView;
     private TextView dayOfMonthCommentView;
+
+    private LinearLayout linearLayoutBg;
 
     @SuppressWarnings("UnusedDeclaration") //
     public CalendarCellView(Context context, AttributeSet attrs) {
@@ -145,14 +148,25 @@ public class CalendarCellView extends FrameLayout {
         return dayOfMonthTextView;
     }
 
-//    public TextView getDayOfMonthCommentView() {
-//        if(dayOfMonthCommentView == null) {
-//            throw new IllegalStateException("You have to setDayOfMonthCommentView in your custom DayViewAdapter.");
-//        }
-//        return dayOfMonthCommentView;
-//    }
-//
-//    public void setDayOfMonthCommentView(TextView dayOfMonthCommentView) {
-//        this.dayOfMonthCommentView = dayOfMonthCommentView;
-//    }
+    public TextView getDayOfMonthCommentView() {
+        if(dayOfMonthCommentView == null) {
+            throw new IllegalStateException("You have to setDayOfMonthCommentView in your custom DayViewAdapter.");
+        }
+        return dayOfMonthCommentView;
+    }
+
+    public void setDayOfMonthCommentView(TextView dayOfMonthCommentView) {
+        this.dayOfMonthCommentView = dayOfMonthCommentView;
+    }
+
+    public LinearLayout getLinearLayoutBg() {
+        if(linearLayoutBg == null) {
+            throw new IllegalStateException("You have to setLinearLayoutBg in your custom DayViewAdapter.");
+        }
+        return linearLayoutBg;
+    }
+
+    public void setLinearLayoutBg(LinearLayout linearLayoutBg) {
+        this.linearLayoutBg = linearLayoutBg;
+    }
 }

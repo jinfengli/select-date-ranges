@@ -1,8 +1,8 @@
 package com.kingfeng.select_date_ranges;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.kingfeng.select_date_ranges.util.TimeUtil;
@@ -10,7 +10,7 @@ import com.kingfeng.select_date_ranges.util.TimeUtil;
 import java.util.Calendar;
 import java.util.Date;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends Activity {
 
     private String thisPeriodStart;
     private String thisPeriodEnd;

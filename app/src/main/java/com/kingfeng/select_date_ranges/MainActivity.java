@@ -1,8 +1,8 @@
 package com.kingfeng.select_date_ranges;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +16,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = "MainActivity";
     private TextView tvSelectDate;

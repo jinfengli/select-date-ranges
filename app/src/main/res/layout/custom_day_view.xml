@@ -2,20 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/day_view"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        style="@style/CalendarCell.CalendarDate" />
 
-<!--    android:background="@drawable/calendar_bg_selector"-->
+    <LinearLayout
+        android:id="@+id/ll_custom"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/day_view"
+            style="@style/CalendarCell.CalendarDate"
+            android:layout_width="41dp"
+            android:layout_height="41dp" />
+    </LinearLayout>
+    <!--android:background="@drawable/text_select_shape"-->
+
+    <!--    android:background="@drawable/calendar_bg_selector"-->
 
     <TextView
         android:id="@+id/tv_calendar_cell_view_comment"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
+        android:layout_height="30dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/holo_red_dark"
         android:textSize="8sp" />
     <!--android:scaleType="centerInside"-->
 </LinearLayout>
