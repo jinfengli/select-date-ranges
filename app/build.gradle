@@ -19,8 +19,83 @@ android {
     }
 }
 
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.kingfeng.select_date_ranges"
+        minSdkVersion 22
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'china'
+            keyPassword '123456789'
+            storeFile file('d:/glapp.jks')
+            storePassword '123456789'
+
+            }
+        }
+//        debug {
+//            storeFile file("debug.keystore")
+//            keyAlias "AndroidDebugKey"
+//            keyPassword "android"
+//            storePassword "android"
+//        }
+//    }
+
+    buildTypes {
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //启用混淆代码的功能
+            minifyEnabled true
+            //压缩对齐生成的apk包
+            zipAlignEnabled true
+            //指定混淆规则，需要压缩优化的混淆要把proguard-android.txt换成proguard-android.txt
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources true
+            signingConfig signingConfigs.release //打包命令行：gradlew assembleRelease
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (variant.buildType.name.equals('release')) {
+                //可自定义自己想要生成的格式
+//                def channel = variant.productFlavors[0].name.startsWith("_") ? variant.productFlavors[0].name.substring(1) : variant.productFlavors[0].name
+                def fileName = "v${defaultConfig.versionName}.apk"
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+//    apply from: 'productFlavors.gradle'
+
+}
+
+//def releaseTime() {
+//    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+//}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.3.1'
+//    compile 'com.android.support:design:23.1.1'
 }
